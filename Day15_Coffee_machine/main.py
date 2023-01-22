@@ -79,8 +79,7 @@ class coffee_machine(ABC):
         cost = MENU[coffee]['cost']
         money = 0
         for coin_type, value in TYPES_OF_COINS.items():
-            n_coins = input(f"How many {coin_type}?: ")
-            money += float(n_coins) * value
+            money += int(input(f"How many {coin_type}?: ")) * value
         if money < cost:
             "Sorry that's not enough money. Money refunded."
             self.run()
